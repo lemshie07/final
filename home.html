@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+
+   
+
+<link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css" media="all" />
+
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<link rel="stylesheet" href="css/font-awesome.css">
+
+<link rel="stylesheet" href="css/animsition.min.css">
+
+
+
+
+
+
+
+  <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+
+<script src="js/jquery.animsition.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+		$.ajax({
+		type: 'GET',
+		url:'page2.php',
+		dataType: 'html',
+		data: {},
+		success: function(data){
+			if(data){
+		$('#data').html(data);
+			}
+			}
+			});
+});
+</script>
+
+
+<!--style -->
+<style>
+body { 
+    background-image: url('Background/1gray_marble_texture_21.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	padding-top: 100px;
+	     padding-right: 10px;
+    padding-bottom: 25px;
+    padding-left: 10px;
+  
+}
+
+.btn-xlarge {
+
+    padding: 10px 100px;
+    font-size: 22px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+    }
+.btn-large {
+
+    padding: 10px 88px;
+    font-size: 22px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+    }
+
+
+</style>
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="home.html" class="navbar-brand"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="home.html">Home</a>
+            </li>
+            <li>
+              <a href="about.html">About</a>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="download">Teams <span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="download">
+                
+              <li><a href="teamcahs.html">CAHS</a></li>
+                <li><a href="teamcba.html">CBA</a></li>
+                <li><a href="teamccs.html">CCS</a></li>
+				  <li><a href="teamceas.html">CEAS</a></li>
+                <li class="divider"></li>
+               
+              </ul>
+            </li>
+             <li>
+              <a href="schedule.html">Schedule</a>
+            </li>
+			 <li>
+              <a href="results.html">Results</a>
+            </li>
+			<li>
+              <a href="admin.html">Admin</a>
+            </li>
+          </ul>
+		   
+		   
+
+        </div>
+      </div>
+    </div>
+ <div
+  class="animsition"
+  data-animsition-in="fade-in-up"
+  data-animsition-in-duration="2000"
+  data-animsition-out="fade-out-up"
+  data-animsition-out-duration="800"
+>
+<div id="data">
+
+	</div>
+
+<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+<script>
+ $(document).ready(function() {
+  
+  $(".animsition").animsition({
+  
+    inClass               :   'fade-in-up',
+    outClass              :   'fade-out-up',
+    inDuration            :    1500,
+    outDuration           :    800,
+    linkElement           :   '.animsition-link',
+    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+    loading               :    false,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [ 'animation-duration',
+                              '-webkit-animation-duration',
+                              '-o-animation-duration'
+                            ],
+    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    
+    overlay               :   false,
+    
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+  });
+});
+
+$(document).ready(function() {
+  
+  $(".animsition").animsition({
+  
+    inClass               :   'fade-in',
+    outClass              :   'fade-out',
+    inDuration            :    1500,
+    outDuration           :    800,
+    linkElement           :   '.animsition-link',
+    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+    loading               :    false,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [ 'animation-duration',
+                              '-webkit-animation-duration',
+                              '-o-animation-duration'
+                            ],
+    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    
+    overlay               :   false,
+    
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+  });
+});
+
+$('.dropdown-toggle').dropdown()
+</script>
+</body>
+</html>

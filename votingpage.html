@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+
+   
+
+<link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css" media="all" />
+
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<link rel="stylesheet" href="css/font-awesome.css">
+
+<link rel="stylesheet" href="css/animsition.min.css">
+
+
+
+
+
+
+
+  <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+
+<script src="js/jquery.animsition.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+
+
+<script>
+$(function(){
+$('#btnSubmit').click(function(){
+		$.ajax({
+		type: 'POST',
+		url:'page3.php',
+		data: $('#data').serialize(),
+		success: function(data){
+			if(data){
+		}
+		}
+	});
+	
+});
+});
+</script>
+
+
+<!--style -->
+<style>
+body { 
+    background: url('Background/1gray_marble_texture_21.jpg') center no-repeat;
+	background-size: cover;
+    padding-top: 80px;
+    padding-right: 10px;
+    padding-bottom: 25px;
+    padding-left: 10px;
+}
+
+.btn-xlarge {
+
+    padding: 10px 100px;
+    font-size: 22px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+    }
+.btn-large {
+
+    padding: 10px 88px;
+    font-size: 22px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+    }
+
+
+</style>
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="navbar-brand"><i class="fa fa-file-text"></i>&nbsp;Voting Page</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="index.html">News Feeds</a>
+            </li>
+            <li>
+              <a href="Presidentiables.html">Presidentiables</a>
+            </li>
+             <li>
+              <a href="votingpage.html">Voting Page</a>
+            </li>
+             <li>
+              <a href="statistic.html">Statistics Page</a>
+            </li>
+          </ul>
+		   
+		   
+
+        </div>
+      </div>
+    </div>
+ <div
+  class="animsition"
+  data-animsition-in="fade-in-up"
+  data-animsition-in-duration="2000"
+  data-animsition-out="fade-out-up"
+  data-animsition-out-duration="800"
+>
+<form class="form-horizontal" id="data">
+  <fieldset>
+    <legend>Voting Form</legend>
+
+    <div class="form-group">
+      <label for="select" class="col-lg-2 control-label">Province</label>
+      <div class="col-lg-10">
+        <select class="form-control" id="select" name="Province">
+         <option value="Abra">Abra</option>
+			<option value="Agusan del Norte">Agusan del Norte</option>
+			<option value="Agusan del Sur">Agusan del Sur</option>
+			<option value="Aklan">Aklan</option>
+			<option value="Albay">Albay</option>
+			<option value="Antique">Antique</option>
+			<option value="Apayao">Apayao</option>
+			<option value="Aurora">Aurora</option>
+			<option value="Basilan">Basilan</option>
+			<option value="Bataan">Bataan</option>
+			<option value="Batanes">Batanes</option>
+			<option value="Batangas">Batangas</option>
+			<option value="Benguet">Benguet</option>
+			<option value="Biliran">Biliran</option>
+			<option value="Bohol">Bohol</option>
+			<option value="Bukidnon">Bukidnon</option>
+			<option value="Bulacan">Bulacan</option>
+			<option value="Cagayan">Cagayan</option>
+			<option value="Camarines Norte">Camarines Norte</option>
+			<option value="Camarines Sur">Camarines Sur</option>
+			<option value="Camiguin">Camiguin</option>
+			<option value="Capiz">Capiz</option>
+			<option value="Catanduanes">Catanduanes</option>
+			<option value="Cavite">Cavite</option>
+			<option value="Cebu">Cebu</option>
+			<option value="Compostela Valley">Compostela Valley</option>
+			<option value="Cotabato">Cotabato</option>
+			<option value="Davao del Norte">Davao del Norte</option>
+			<option value="Davao del Sur">Davao del Sur</option>
+			<option value="Davao Occidental">Davao Occidental</option>
+			<option value="Davao Oriental">Davao Oriental</option>
+			<option value="Dinagat Islands">Dinagat Islands</option>
+			<option value="Eastern Samar">Eastern Samar</option>
+			<option value="Guimaras">Guimaras</option>
+			<option value="Ifugao">Ifugao</option>
+			<option value="Ilocos Norte">Ilocos Norte</option>
+			<option value="Ilocos Sur">Ilocos Sur</option>
+			<option value="Iloilo">Iloilo</option>
+			<option value="Isabela">Isabela</option>
+			<option value="Kalinga">Kalinga</option>
+			<option value="La Union">La Union</option>
+			<option value="Laguna">Laguna</option>
+			<option value="Lanao del Norte">Lanao del Norte</option>
+			<option value="Lanao del Sur">Lanao del Sur</option>
+			<option value="Leyte">Leyte</option>
+			<option value="Maguindanao">Maguindanao</option>
+			<option value="Marinduque">Marinduque</option>
+			<option value="Masbate">Masbate</option>
+			<option value="Metro Manila">Metro Manila</option>
+			<option value="Misamis Occidental">Misamis Occidental</option>
+			<option value="Misamis Oriental">Misamis Oriental</option>
+			<option value="Mountain Province">Mountain Province</option>
+			<option value="Negros Occidental">Negros Occidental</option>
+			<option value="Negros Oriental">Negros Oriental</option>
+			<option value="Northern Samar">Northern Samar</option>
+			<option value="Nueva Ecija">Nueva Ecija</option>
+			<option value="Nueva Vizcaya">Nueva Vizcaya</option>
+			<option value="Occidental Mindoro">Occidental Mindoro</option>
+			<option value="Oriental Mindoro	">Oriental Mindoro	</option>
+			<option value="Palawan">Palawan</option>
+			<option value="Pampanga">Pampanga</option>
+			<option value="Pangasinan">Pangasinan</option>
+			<option value="Quezon">Quezon</option>
+			<option value="Quirino">Quirino</option>
+			<option value="Rizal">Rizal</option>
+			<option value="Romblon">Romblon</option>
+			<option value="Samar">Samar</option>
+			<option value="Sarangani">Sarangani</option>
+			<option value="Siquijor">Siquijor</option>
+			<option value="Sorsogon">Sorsogon</option>
+			<option value="South Cotabato">South Cotabato</option>
+			<option value="Southern Leyte">Southern Leyte</option>
+			<option value="Sultan Kudarat">Sultan Kudarat</option>
+			<option value="Sulu">Sulu</option>
+			<option value="Surigao del Norte">Surigao del Norte</option>
+			<option value="Surigao del Sur">Surigao del Sur</option>
+			<option value="Tarlac">Tarlac</option>
+			<option value="Tawi-Tawi">Tawi-Tawi</option>
+			<option value="Zambales">Zambales</option>
+			<option value="Zamboanga del Norte">Zamboanga del Norte</option>
+			<option value="Zamboanga del Sur">Zamboanga del Sur</option>
+			<option value="Zamboanga Sibugay">Zamboanga Sibugay</option>
+        </select>
+		</div>
+        <br>
+		 <label for="select" class="col-lg-2 control-label">For President</label>
+		<div class="col-lg-10">
+		
+        <select class="form-control" id="select" name="president">
+          <option value="Jejomar Binay">Jejomar Binay</option>
+          <option value="Grace Poe">Grace Poe</option>
+          <option value="Mar Roxas">Mar Roxas</option>
+        </select>
+		</div>
+		</br>
+		 <label for="select" class="col-lg-2 control-label">For Vice President</label>
+		<div class="col-lg-10">
+		 <select class="form-control" id="select" name="vicepresident">
+         <option value="Alan Peter Cayetano">Alan Peter Cayetano</option>
+         <option value="Francis Escudero">Francis Escudero</option>
+         <option value="Antonio Trillanes">Antonio Trillanes</option>
+        </select>
+		</div>
+		</br>
+		 <label for="select" class="col-lg-2 control-label" >Other Candidacy</label>
+		<div class="col-lg-10">
+		 <select class="form-control" id="select" name="other">
+											<option value="Bong Revilla">Bong Revilla</option>
+                                              <option value="Leni Robredo">Leni Robredo</option>
+                                              <option value="Vilma Santos">Vilma Santos</option>
+											  <option value="Ferdinand Marcos, Jr.">Ferdinand Marcos, Jr.</option>
+                                              <option value="Panfilo Lacson">Panfilo Lacson</option>
+                                              <option value="Benigno Aquino III">Benigno Aquino III</option>
+											  <option value="Kris Aquino">Kris Aquino</option>
+                                              <option value="Rodrigo Duterte">Rodrigo Duterte</option>
+                                              <option value="JV Ejercito">JV Ejercito</option>
+                                          	  <option value="Jinggoy Estrada">Jinggoy Estrada</option>
+                                              <option value="Joseph Estrada">Joseph Estrada</option>
+                                              <option value="Manny Pacquiao">Manny Pacquiao</option>
+											  <option value="Francis Pangilinan">Francis Pangilinan</option>
+                                              <option value="Manny Pangilinan">Manny Pangilinan</option>
+                                              <option value="Miriam Defensor Santiago">Miriam Defensor Santiago</option>
+											  <option value="Gilberto Teodoro, Jr.">Gilberto Teodoro, Jr.</option>
+                                              <option value="Manny Villar">Manny Villar</option>
+                                            
+        </select>
+		</div>
+      </div>
+      <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="submit" id="btnSubmit"class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+	
+	</div>
+  
+  </fieldset>
+</form>
+</div>
+
+<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+<script>
+ $(document).ready(function() {
+  
+  $(".animsition").animsition({
+  
+    inClass               :   'fade-in-up',
+    outClass              :   'fade-out-up',
+    inDuration            :    1500,
+    outDuration           :    800,
+    linkElement           :   '.animsition-link',
+    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+    loading               :    false,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [ 'animation-duration',
+                              '-webkit-animation-duration',
+                              '-o-animation-duration'
+                            ],
+    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    
+    overlay               :   false,
+    
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+  });
+});
+
+$(document).ready(function() {
+  
+  $(".animsition").animsition({
+  
+    inClass               :   'fade-in',
+    outClass              :   'fade-out',
+    inDuration            :    1500,
+    outDuration           :    800,
+    linkElement           :   '.animsition-link',
+    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+    loading               :    false,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [ 'animation-duration',
+                              '-webkit-animation-duration',
+                              '-o-animation-duration'
+                            ],
+    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    
+    overlay               :   false,
+    
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+  });
+});
+
+$('.dropdown-toggle').dropdown()
+</script>
+</body>
+</html>

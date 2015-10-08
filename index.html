@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<style>
+body { 
+    background: url('Background/1gray_marble_texture_21.jpg') center no-repeat;
+	background-size: cover;
+    padding-top: 50px;
+    padding-right: 10px;
+    padding-bottom: 25px;
+    padding-left: 10px;
+}
+
+
+
+
+#login{
+width: 100%;
+
+
+}
+
+
+
+</style>
+
+
+
+
+</head>
+<body>
+
+<script src="cordova.js"></script>
+<script src="js/openfb.js"></script>
+<center>
+<div
+  class="animsition"
+  data-animsition-in="zoom-in-lg"
+  data-animsition-in-duration="1000"
+  data-animsition-out="zoom-out"
+  data-animsition-out-duration="800"
+>
+	<table>
+<tr>
+<td><img src="img/1.png" width="200px" class="img-responsive" alt="Cinque Terre"></td>
+</tr>
+</table>
+</br>
+</br>
+<table>
+<tr>
+<td><center><a href="#" class="btn btn-info"id="buttonfb">Log-in via Facebook </a></center></td>
+
+
+
+</tr>
+</table>
+</div>
+</center>
+<script>
+openFB.init({appId: '1065798636772149'});
+$("#buttonfb").click(function(){
+openFB.login(
+                function(response) {
+                    if(response.status === 'connected') {
+                        location.href="news.html";
+                    } else {
+                        alert('Facebook login failed: ' + response.error);
+                    }
+                }, {scope: 'email'});
+});
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+
+   
+
+<link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css" media="all" />
+
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<link rel="stylesheet" href="css/font-awesome.css">
+
+<link rel="stylesheet" href="css/animsition.min.css">
+
+
+
+
+
+
+
+  <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+
+<script src="js/jquery.animsition.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+
+
+<!--style -->
+<style>
+body { 
+    background: url('Background/1gray_marble_texture_21.jpg') center no-repeat;
+	background-size: cover;
+    padding-top: 50px;
+    padding-right: 10px;
+    padding-bottom: 25px;
+    padding-left: 10px;
+}
+
+
+
+#tweet{
+width: 100%;
+
+
+}
+
+
+
+</style>
+
+
+</head>
+
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="navbar-brand"><i class="fa fa-home fa-fw"></i>&nbsp; Halalan 2016</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="news.html">News Feeds</a>
+            </li>
+            <li>
+              <a href="Presidentiables.html">Presidentiables</a>
+            </li>
+             <li>
+              <a href="votingpage.html">Voting Page</a>
+            </li>
+             <li>
+              <a href="statistic.html">Statistics Page</a>
+            </li>
+          </ul>
+		   
+		   
+
+        </div>
+      </div>
+    </div>
+
+	<div
+  class="animsition"
+  data-animsition-in="zoom-in-lg"
+  data-animsition-in-duration="1000"
+  data-animsition-out="zoom-out"
+  data-animsition-out-duration="800"
+>
+	
+</div>
+</br>
+	<center>
+ <div
+  class="animsition"
+  data-animsition-in="fade-in-up"
+  data-animsition-in-duration="2000"
+  data-animsition-out="fade-out-up"
+  data-animsition-out-duration="800"
+>
+<center>
+<div id="tweet">
+	<a class="twitter-timeline" href="https://twitter.com/hashtag/halalan2016" data-widget-id="644876379037667328" width ="100%">#halalan2016 Tweets</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			</div>
+</center>
+</div>
+</center>
+
+<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+<script>
+
+  
+ $(document).ready(function() {
+
+  
+  $(".animsition").animsition({
+  
+    inClass               :   'fade-in-up',
+    outClass              :   'fade-out-up',
+    inDuration            :    1500,
+    outDuration           :    800,
+    linkElement           :   '.animsition-link',
+    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+    loading               :    false,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [ 'animation-duration',
+                              '-webkit-animation-duration',
+                              '-o-animation-duration'
+                            ],
+    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    
+    overlay               :   false,
+    
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+  });
+});
+
+$(document).ready(function() {
+  
+  $(".animsition").animsition({
+  
+    inClass               :   'fade-in',
+    outClass              :   'fade-out',
+    inDuration            :    1500,
+    outDuration           :    800,
+    linkElement           :   '.animsition-link',
+    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+    loading               :    false,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [ 'animation-duration',
+                              '-webkit-animation-duration',
+                              '-o-animation-duration'
+                            ],
+    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    
+    overlay               :   false,
+    
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+  });
+});
+$(document).ready(function() {
+  
+  $(".animsition").animsition({
+  
+    inClass               :   'zoom-in-lg',
+    outClass              :   'zoom-out',
+    inDuration            :    2000,
+    outDuration           :    800,
+    linkElement           :   '.animsition-link',
+    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+    loading               :    false,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [ 'animation-duration',
+                              '-webkit-animation-duration',
+                              '-o-animation-duration'
+                            ],
+    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    
+    overlay               :   false,
+    
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+  });
+});
+$('.dropdown-toggle').dropdown()
+</script>
+</body>
+</html>

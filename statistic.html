@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+
+   
+
+<link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css" media="all" />
+
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<link rel="stylesheet" href="css/font-awesome.css">
+
+<link rel="stylesheet" href="css/animsition.min.css">
+
+<link href="css/xcharts.min.css" rel=" stylesheet">	
+
+
+
+
+
+  <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+
+<script src="js/jquery.animsition.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
+
+
+
+<script>
+$(function(){
+	$.getJSON("getdatachart.php",function(data){
+		var chartdata = [];
+		var objectdata = {};
+		$.each(data.results,function(key,value){
+			objectdata = { y: parseInt(value['votecount']), label: value['candidate']};
+			chartdata.push(objectdata);
+		});
+		var chart = new CanvasJS.Chart("chartContainer",
+		{
+		
+			animationEnabled: true,
+			data: [
+			{        
+				type: "doughnut",
+				toolTipContent: "{label}: {y} - <strong>#percent%</strong>",
+				indexLabel: "{label} #percent%",
+				dataPoints: chartdata
+			}
+			]
+		});
+		chart.render();
+	});
+	
+	$.getJSON("getdatachart1.php",function(data){
+		var chartdata1 = [];
+		var objectdata1 = {};
+		$.each(data.results,function(key,value){
+			objectdata1 = { y: parseInt(value['votecount']), label: value['candidate']};
+			chartdata1.push(objectdata1);
+		});
+		var chart1 = new CanvasJS.Chart("chartContainer1",
+		{
+		
+			animationEnabled: true,
+			data: [
+			{        
+				type: "doughnut",
+				toolTipContent: "{label}: {y} - <strong>#percent%</strong>",
+				indexLabel: "{label} #percent%",
+				dataPoints: chartdata1
+			}
+			]
+		});
+		chart1.render();
+	});
+	$.getJSON("getdatachart2.php",function(data){
+		var chartdata2 = [];
+		var objectdata2 = {};
+		$.each(data.results,function(key,value){
+			objectdata2 = { y: parseInt(value['votecount']), label: value['candidate']};
+			chartdata2.push(objectdata2);
+		});
+		var chart2 = new CanvasJS.Chart("chartContainer2",
+		{
+		
+			animationEnabled: true,
+			data: [
+			{        
+				type: "doughnut",
+				toolTipContent: "{label}: {y} - <strong>#percent%</strong>",
+				indexLabel: "{label} #percent%",
+				dataPoints: chartdata2
+			}
+			]
+		});
+		chart2.render();
+	});
+	
+	
+});
+</script>
+<!--style -->
+<style>
+body { 
+    background: url('Background/1gray_marble_texture_21.jpg') center no-repeat;
+	background-size: cover;
+    padding-top: 70px;
+    padding-right: 10px;
+    padding-bottom: 25px;
+    padding-left: 10px;
+}
+
+.btn-xlarge {
+
+    padding: 10px 100px;
+    font-size: 22px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+    }
+
+
+
+</style>
+</head>
+
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="navbar-brand"><i class="fa fa-pie-chart"></i>&nbsp;Statistics</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="news.html">News Feeds</a>
+            </li>
+            <li>
+              <a href="Presidentiables.html">Presidentiables</a>
+            </li>
+             <li>
+              <a href="votingpage.html">Voting Page</a>
+            </li>
+             <li>
+              <a href="statistic.html">Statistics Page</a>
+            </li>
+			
+          </ul>
+		   
+		   
+
+        </div>
+      </div>
+    </div>
+ <div
+  class="animsition"
+  data-animsition-in="fade-in-up"
+  data-animsition-in-duration="2000"
+  data-animsition-out="fade-out-up"
+  data-animsition-out-duration="800"
+>
+<div id="data">
+
+	</div>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#home" data-toggle="tab" aria-expanded="true">President</a></li>
+
+
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active in" id="home">
+  <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+  </div>
+</div>
+</br>
+</br>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#" data-toggle="tab" aria-expanded="true">Vice</a></li>
+
+
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active in" id="">
+  <div id="chartContainer1" style="height: 300px; width: 100%;"></div>
+  </div>
+</div>
+
+</br>
+</br>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#" data-toggle="tab" aria-expanded="true">Others</a></li>
+
+
+</ul>
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active in" id="">
+  <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+  </div>
+</div>
+
+</div>
+
+
+<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+<script>
+ $(document).ready(function() {
+  
+  $(".animsition").animsition({
+  
+    inClass               :   'fade-in-up',
+    outClass              :   'fade-out-up',
+    inDuration            :    1500,
+    outDuration           :    800,
+    linkElement           :   '.animsition-link',
+    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+    loading               :    false,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [ 'animation-duration',
+                              '-webkit-animation-duration',
+                              '-o-animation-duration'
+                            ],
+    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    
+    overlay               :   false,
+    
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+  });
+});
+
+$(document).ready(function() {
+  
+  $(".animsition").animsition({
+  
+    inClass               :   'fade-in',
+    outClass              :   'fade-out',
+    inDuration            :    1500,
+    outDuration           :    800,
+    linkElement           :   '.animsition-link',
+    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+    loading               :    false,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [ 'animation-duration',
+                              '-webkit-animation-duration',
+                              '-o-animation-duration'
+                            ],
+    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    
+    overlay               :   false,
+    
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+  });
+  });
+
+
+$('.dropdown-toggle').dropdown()
+</script>
+</body>
+</html>

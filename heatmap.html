@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+
+   
+
+<link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css" media="all" />
+
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+
+<link rel="stylesheet" href="css/font-awesome.min.css">
+
+<link rel="stylesheet" href="css/font-awesome.css">
+
+<link rel="stylesheet" href="css/animsition.min.css">
+
+<link href="css/xcharts.min.css" rel=" stylesheet">	
+
+
+
+
+
+  <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
+
+<script src="js/jquery.animsition.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.canvasjs.min.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script src="build/heatmap.js"></script>
+	<script src="plugins/gmaps-heatmap.js"></script>
+
+
+<script>
+var heatdis =[];
+$(document).ready(function(){
+	$.getJSON("displayheat.php", function(data)
+         		{
+					$.each(data, function(key, value) {
+						heatdis.push({lat: value['long'], lng: value['lat'], count: value['bilang']});
+					});	
+				});
+			
+				});
+function initialize() {
+	// don't forget to add gmaps-heatmap.js
+var myLatlng = new google.maps.LatLng(14.5800,121.0000);
+// map options,
+var myOptions = {
+  zoom: 5,
+  center: myLatlng
+};
+// standard map
+map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+// heatmap layer
+heatmap = new HeatmapOverlay(map, 
+  {
+    // radius should be small ONLY if scaleRadius is true (or small radius is intended)
+    "radius": 1,
+    "maxOpacity": 1, 
+    // scales the radius based on map zoom
+    "scaleRadius": true, 
+    // if set to false the heatmap uses the global maximum for colorization
+    // if activated: uses the data maximum within the current map boundaries 
+    //   (there will always be a red spot with useLocalExtremas true)
+    "useLocalExtrema": true,
+    // which field name in your data represents the latitude - default "lat"
+    latField: 'lat',
+    // which field name in your data represents the longitude - default "lng"
+    lngField: 'lng',
+    // which field name in your data represents the data value - default "value"
+    valueField: 'count'
+  }
+);
+
+var testData = {
+  max: 8,
+  data: heatdis
+};
+
+heatmap.setData(testData);
+
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<!--style -->
+<style>
+body { 
+    background: url('Background/1gray_marble_texture_21.jpg') center no-repeat;
+	background-size: cover;
+    padding-top: 70px;
+    padding-right: 10px;
+    padding-bottom: 25px;
+    padding-left: 10px;
+}
+
+.btn-xlarge {
+
+    padding: 10px 100px;
+    font-size: 22px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+    }
+
+
+
+</style>
+</head>
+
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="navbar-brand"><i class="fa fa-pie-chart"></i>&nbsp;Statistics</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="news.html">News Feeds</a>
+            </li>
+            <li>
+              <a href="Presidentiables.html">Presidentiables</a>
+            </li>
+             <li>
+              <a href="votingpage.html">Voting Page</a>
+            </li>
+             <li>
+              <a href="statistic.html">Statistics Page</a>
+            </li>
+			
+          </ul>
+		   
+		   
+
+        </div>
+      </div>
+    </div>
+ <div
+  class="animsition"
+  data-animsition-in="fade-in-up"
+  data-animsition-in-duration="2000"
+  data-animsition-out="fade-out-up"
+  data-animsition-out-duration="800"
+>
+                                       <div id="map-canvas" style="width:100%;height:380px;">
+
+             
+</div>
+
+
+<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+<script>
+ $(document).ready(function() {
+  
+  $(".animsition").animsition({
+  
+    inClass               :   'fade-in-up',
+    outClass              :   'fade-out-up',
+    inDuration            :    1500,
+    outDuration           :    800,
+    linkElement           :   '.animsition-link',
+    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+    loading               :    false,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [ 'animation-duration',
+                              '-webkit-animation-duration',
+                              '-o-animation-duration'
+                            ],
+    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    
+    overlay               :   false,
+    
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+  });
+});
+
+$(document).ready(function() {
+  
+  $(".animsition").animsition({
+  
+    inClass               :   'fade-in',
+    outClass              :   'fade-out',
+    inDuration            :    1500,
+    outDuration           :    800,
+    linkElement           :   '.animsition-link',
+    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+    loading               :    false,
+    loadingParentElement  :   'body', //animsition wrapper element
+    loadingClass          :   'animsition-loading',
+    unSupportCss          : [ 'animation-duration',
+                              '-webkit-animation-duration',
+                              '-o-animation-duration'
+                            ],
+    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    
+    overlay               :   false,
+    
+    overlayClass          :   'animsition-overlay-slide',
+    overlayParentElement  :   'body'
+  });
+  });
+
+
+$('.dropdown-toggle').dropdown()
+</script>
+</body>
+</html>
